@@ -51,6 +51,20 @@ The existing notebooks exchange train/test splits and one-row model result
 tables through `output/`. Run notebooks in the order shown above if those
 artifacts need to be regenerated.
 
+## Model comparison
+
+Using the F1-score selection criterion in the existing comparison notebook,
+**Random Forest** produced the strongest result with an F1-score of 0.605. It
+also had the highest reported accuracy (0.625) and ROC-AUC (0.780) among the
+five evaluated models.
+
+![Five-model performance comparison](results/figures/model_comparison.png)
+
+The complete metrics are available in
+[`results/tables/model_comparison.csv`](results/tables/model_comparison.csv),
+and the comparison workflow is documented in
+[`notebooks/07_final_comparison.ipynb`](notebooks/07_final_comparison.ipynb).
+
 ## Key finding: physicochemical feature importance
 
 Random Forest was the strongest-performing model in the project. Its feature
