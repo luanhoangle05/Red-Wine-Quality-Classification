@@ -51,6 +51,26 @@ The existing notebooks exchange train/test splits and one-row model result
 tables through `output/`. Run notebooks in the order shown above if those
 artifacts need to be regenerated.
 
+## Key finding: physicochemical feature importance
+
+Random Forest was the strongest-performing model in the project. Its feature
+importance analysis ranked **alcohol**, **sulphates**, **volatile acidity**,
+**total sulfur dioxide**, and **density** as the five most important inputs to
+its wine-quality predictions.
+
+![Random Forest feature importance](results/figures/random_forest_feature_importance.png)
+
+The complete ranked values are available in
+[`results/tables/random_forest_feature_importance.csv`](results/tables/random_forest_feature_importance.csv),
+and the calculation is documented in
+[`notebooks/05_random_forest.ipynb`](notebooks/05_random_forest.ipynb).
+
+These values measure predictive importance within the fitted Random Forest;
+they do not establish that a property causes wine quality to change or indicate
+the direction of a relationship. The exploratory analysis provides additional
+context: alcohol had an approximately +0.48 correlation with quality, while
+volatile acidity had an approximately -0.39 correlation.
+
 ## Team project
 
 Before using this repository in a personal portfolio, add a short section
