@@ -1,15 +1,45 @@
-# Red Wine Quality Analysis
+# Red Wine Quality Classification
 
-A notebook-based team project using the Red Wine Quality dataset. This README
-documents the repository layout and how to reproduce the existing notebooks;
-it does not change the analysis, models, or project question.
+A notebook-based machine-learning study comparing five classifiers for
+predicting expert-assigned red wine quality ratings from physicochemical
+measurements. The project also examines which measured properties contribute
+most strongly to the models' predictions.
+
+## Project overview
+
+Wine quality is commonly assessed through expert sensory evaluation. This
+project investigates whether routinely collected laboratory measurements can
+support that assessment by predicting quality scores from 3 to 8.
+
+The source dataset contains 1,599 Portuguese vinho verde red wine records and
+11 numerical physicochemical inputs. Data preparation removed 240 duplicate
+records, leaving 1,359 unique observations for the modeling workflow. The five
+evaluated classifiers were Logistic Regression, K-Nearest Neighbors, Decision
+Tree, Random Forest, and a multilayer perceptron neural network.
+
+### Project objectives
+
+- Compare five multiclass classification models using a shared stratified data
+  split and a consistent set of reported metrics.
+- Identify the physicochemical properties most important to wine-quality
+  predictions.
+- Communicate model performance, feature importance, and project limitations
+  through reproducible notebooks and exported results.
+
+## Technology
+
+- Python and Jupyter Notebook
+- pandas and NumPy for data preparation
+- scikit-learn for preprocessing, modeling, and evaluation
+- Matplotlib and Seaborn for visualization
 
 ## Repository layout
 
 ```text
-data/       Source dataset and dataset attribution
-notebooks/  Analysis notebooks in execution order
-output/     Shared data splits and saved model-result tables
+data/       Source dataset and attribution
+notebooks/  Data preparation, EDA, models, and final comparison
+output/     Shared data splits and original model-result files
+results/    Portfolio-facing figures and ranked result tables
 ```
 
 ## Notebook order
@@ -84,3 +114,40 @@ they do not establish that a property causes wine quality to change or indicate
 the direction of a relationship. The exploratory analysis provides additional
 context: alcohol had an approximately +0.48 correlation with quality, while
 volatile acidity had an approximately -0.39 correlation.
+
+## Evaluation scope and limitations
+
+This repository preserves the original course-project experiment and its
+reported results. In the KNN notebook, the value of `k` is selected using the
+test partition, and the same test partition is subsequently used in the final
+five-model comparison. Therefore, the comparison values should be treated as
+the project's reported evaluation results rather than as an unbiased estimate
+from a final untouched test set. A future methodological revision should move
+all tuning and model selection into cross-validation performed only on the
+training data.
+
+Additional limitations include the moderate dataset size, strong concentration
+of observations in quality classes 5 and 6, and the subjectivity present in the
+expert-assigned target ratings. Feature importance describes model behavior and
+should not be interpreted as evidence of causation.
+
+## Team and contributions
+
+This project was completed by **Audrey Galle Brual, Luan Hoang Le, Lydia
+Protsenko, and Arvin Gill** for DATA 221 at the University of Calgary.
+
+### Luan Hoang Le — individual contribution
+
+- Created and maintained the shared data-preparation workflow and saved
+  train/test artifacts used by the model notebooks.
+- Implemented and evaluated the Random Forest classifier, including its
+  confusion matrix, classification metrics, ROC-AUC, and feature-importance
+  analysis.
+- Integrated the model-result files into the final five-model comparison and
+  prepared the exported comparison and feature-importance results.
+- Organized and documented the public repository for reproducibility and
+  portfolio presentation.
+
+The other team members contributed the EDA and Logistic Regression analysis
+(Audrey Galle Brual), KNN and neural-network analysis (Lydia Protsenko), and
+Decision Tree and ROC-AUC analysis (Arvin Gill).
