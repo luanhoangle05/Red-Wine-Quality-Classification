@@ -84,8 +84,3 @@ they do not establish that a property causes wine quality to change or indicate
 the direction of a relationship. The exploratory analysis provides additional
 context: alcohol had an approximately +0.48 correlation with quality, while
 volatile acidity had an approximately -0.39 correlation.
-
-## Team project
-
-Before using this repository in a personal portfolio, add a short section
-describing your individual contribution and credit the other contributors.
